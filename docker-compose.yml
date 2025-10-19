@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   sumo-ns3-vnc:
-    build: .
+    image: airton/sumo-ns3-vnc-lab:latest
     container_name: sumo-ns3-vnc-lab
     ports:
       - "6080:6080"  # noVNC Web Interface

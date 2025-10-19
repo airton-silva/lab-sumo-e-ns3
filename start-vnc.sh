@@ -15,25 +15,21 @@ startxfce4 &
 # Verificar instalações
 echo "Verificando instalações..."
 which sumo && sumo --version
-which ns3 && echo "NS-3 instalado"
+which ns3 && echo "NS-3 instalado (Via Source/Build)"
 
-# Criar atalho para Jupyter no desktop
-echo "[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Jupyter Lab
-Comment=Jupyter Laboratory
-Exec=xfce4-terminal -e 'bash -c \"jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=; bash\"'
-Icon=applications-science
-Categories=Development;
-" > /root/Desktop/jupyter.desktop
-
-chmod +x /root/Desktop/jupyter.desktop
-
-# Iniciar Jupyter em background
+# -----------------------------------------------------------
+# AJUSTE JUPYTER LAB: 
+# Inicialização apenas em background para acesso via porta 8888.
+# Removida a criação redundante de atalho que inicia o serviço.
+# -----------------------------------------------------------
+echo "Iniciando Jupyter Lab (Porta 8888)..."
 jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root \
     --NotebookApp.token='' --NotebookApp.password='' \
     --notebook-dir=/workspace &
+# -----------------------------------------------------------
+# FIM AJUSTE JUPYTER LAB
+# -----------------------------------------------------------
+
 
 # Iniciar VNC server
 x11vnc -forever -noxdamage -shared -display :0 -passwd 123456 &
@@ -50,8 +46,7 @@ echo " VNC Password: 123456"
 echo "=========================================="
 echo " Desktop apps available:"
 echo " - Terminal"
-echo " - Firefox" 
-echo " - Jupyter Lab"
+echo " - Firefox (Para abrir o OSM Web Wizard)" 
 echo "=========================================="
 
 # Manter container rodando
