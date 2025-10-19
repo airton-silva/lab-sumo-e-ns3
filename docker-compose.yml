@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  sumo-ns3-vnc:
+    build: .
+    container_name: sumo-ns3-vnc-lab
+    ports:
+      - "6080:6080"  # noVNC Web Interface
+      - "5900:5900"  # VNC Server
+      - "8888:8888"  # Jupyter Lab
+    volumes:
+      - ./workspace:/workspace
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
