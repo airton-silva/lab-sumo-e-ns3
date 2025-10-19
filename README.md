@@ -48,6 +48,7 @@ Os seguintes arquivos de exemplo estão incluídos para verificar a funcionalida
 
 ### 1. Testar SUMO (GUI)
 
+<<<<<<< HEAD
 sumo-gui -n /workspace/examples/sumo/hello-word.net.xml -r /workspace/examples/sumo/hello-word.rou.xml
 
 ### 2. Testar NS-3
@@ -55,10 +56,29 @@ sumo-gui -n /workspace/examples/sumo/hello-word.net.xml -r /workspace/examples/s
 cd /opt/ns-allinone-3.37/ns-3.37
 ./waf --run scratch/hello-simulator
 
+=======
+```bash
+sumo-gui -n /workspace/examples/sumo/hello-word.net.xml -r /workspace/examples/sumo/hello-word.rou.xml
+
+```
+
+### 2. Testar NS-3
+
+```bash
+cd /opt/ns-allinone-3.37/ns-3.37
+./waf --run scratch/hello-simulator
+
+```    
+
+>>>>>>> versao1.1
 ### Testar Jupyter Lab (TraCI/SUMO Python)
 
 1. Acesse http://localhost:8888 no seu navegador host.
 
 2. Navegue até notebook/01-sumo-basico.ipynb.
 
+<<<<<<< HEAD
 3. Execute as células em ordem para verificar a integração entre Python e a API TraCI do SUMO.
+=======
+3. Execute as células em ordem para verificar a integração entre Python e a API TraCI do SUMO.
+>>>>>>> versao1.1
