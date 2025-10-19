@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <junction id="j0" type="dead_end" x="0.0" y="0.0"/>
+    <junction id="j1" type="dead_end" x="500.0" y="0.0"/>
+
+    <edge id="e0" from="j0" to="j1" priority="1">
+        <lane id="e0_0" index="0" speed="13.9" length="500.0" shape="0.0,0.0 500.0,0.0"/>
+    </edge>
+    <edge id="e1" from="j1" to="j0" priority="1">
+        <lane id="e1_0" index="0" speed="13.9" length="500.0" shape="500.0,0.0 0.0,0.0"/>
+    </edge>
+
+    <connection from="e0" to="e1" fromLane="0" toLane="0" dir="l" state="M"/>
+
+</net>
