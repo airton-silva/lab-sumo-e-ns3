@@ -47,14 +47,18 @@ VNC Direto (Cliente),5900,Cliente VNC (ex: RealVNC) para localhost:5900,Senha: 1
 Os seguintes arquivos de exemplo estão incluídos para verificar a funcionalidade de cada ferramenta. Todos os comandos devem ser executados dentro do Terminal no Desktop VNC.
 
 ### 1. Testar SUMO (GUI)
+
 ```bash
 sumo-gui -n /workspace/examples/sumo/hello-word.net.xml -r /workspace/examples/sumo/hello-word.rou.xml
+
 ```
 
 ### 2. Testar NS-3
+
 ```bash
 cd /opt/ns-allinone-3.37/ns-3.37
 ./waf --run scratch/hello-simulator
+
 ```    
 
 ### Testar Jupyter Lab (TraCI/SUMO Python)
